@@ -1,0 +1,122 @@
+/* Theme Variables */
+:root {
+    /* Light Theme (Default) */
+    --bg-primary: #ffffff;
+    --bg-secondary: #f0f2f5;
+    --text-primary: #2d3436;
+    --text-secondary: #636e72;
+    --accent-primary: #0984e3;
+    --accent-secondary: #74b9ff;
+    --border-color: #e1e8ed;
+    --card-bg: #ffffff;
+    --nav-bg: rgba(255, 255, 255, 1);
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --header-height: 70px;
+    --input-bg: #ffffff;
+    --input-border: #dfe6e9;
+    --footer-bg: #f8f9fa;
+    --footer-text: #636e72;
+    --footer-link: #0984e3;
+    --footer-border: #e1e8ed;
+    --social-icon: #000000;
+    --social-bg: #f0f2f5;
+    --social-hover: #0984e3;
+    
+    /* Animation Duration */
+    --transition-speed: 0.2s;
+    --nav-transition: 0.1s;
+    color-scheme: light;
+}
+
+/* Dark Theme */
+[data-theme="dark"] {
+    --bg-primary: #1a1a1a;
+    --bg-secondary: #2d2d2d;
+    --text-primary: #ffffff;
+    --text-secondary: #a0a0a0;
+    --accent-primary: #74b9ff;
+    --accent-secondary: #0984e3;
+    --border-color: #404040;
+    --card-bg: #2d2d2d;
+    --nav-bg: rgba(26, 26, 26, 0.95);
+    --shadow-color: rgba(0, 0, 0, 0.3);
+    --input-bg: #333333;
+    --input-border: #4a4a4a;
+    --footer-bg: #2d2d2d;
+    --footer-text: #a0a0a0;
+    --footer-link: #74b9ff;
+    --footer-border: #404040;
+    --social-icon: #ffffff;
+    --social-bg: #2d2d2d;
+    --social-hover: #74b9ff;
+    color-scheme: dark;
+}
+
+/* Base styles with theme variables */
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+/* Apply theme to common elements */
+input, textarea, select {
+    background-color: var(--input-bg);
+    border-color: var(--input-border);
+    color: var(--text-primary);
+}
+
+.card, .project-card {
+    background-color: var(--card-bg);
+}
+
+a {
+    color: var(--accent-primary);
+}
+
+.section-title {
+    color: var(--accent-primary);
+}
+
+.nav-link {
+    color: var(--text-secondary);
+}
+
+.nav-link:hover {
+    color: var(--accent-primary);
+}
+
+/* Theme Transition */
+* {
+    transition: background-color var(--transition-speed) ease,
+                color var(--transition-speed) ease,
+                border-color var(--transition-speed) ease,
+                box-shadow var(--transition-speed) ease;
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background: var(--accent-primary);
+    color: var(--bg-primary);
+    border: none;
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1000;
+    box-shadow: 0 2px 10px var(--shadow-color);
+}
+
+.theme-toggle ion-icon {
+    font-size: 1.5rem;
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}

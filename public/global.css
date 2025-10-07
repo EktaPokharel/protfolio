@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+    overflow-x: hidden;
+    min-height: 100vh;
+    position: relative;
+}
+
+.background-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    opacity: 0.6;
+}
+
+.background-animation canvas {
+    width: 100%;
+    height: 100%;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--text-primary);
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+p {
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Buttons */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all var(--transition-speed) ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: var(--accent-primary);
+    color: var(--bg-primary);
+}
+
+.btn-primary:hover {
+    background: var(--accent-secondary);
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid var(--accent-primary);
+    color: var(--accent-primary);
+}
+
+.btn-outline:hover {
+    background: var(--accent-primary);
+    color: var(--bg-primary);
+}
+
+header,
+footer {
+    /* background: #333; */
+    color: #fff;
+    /* padding: 1rem; */
+    text-align: center;
+}
+
+.background-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.5;
+}
+
+nav {
+    height: var(--header-height);
+    width: 100%;
+    background-color: rgba(34, 34, 34, 0.95);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+}
+
+nav .main {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    justify-content: space-between;
+    padding: 0 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+nav .main .toggle #toggle-checkbox {
+    display: none;
+}
+
+nav a {
+    color: #fff;
+    margin: 0 1rem;
+    text-decoration: none;
+}
+
+ion-icon {
+    vertical-align: middle;
+    font-size: 34px;
+    color: var(--social-icon);
+}
+
+.brand{
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-decoration: none;
+    color: var(--accent-primary);
+}
+
+nav .main .toggle {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    nav .main .links {
+        display: none;
+        flex-direction: column;
+        background-color: #222;
+        position: absolute;
+        top: 70px;
+        /* Adjust based on nav height */
+        left: 0;
+        width: 100%;
+    }
+
+    nav .main .links a {
+        padding: 1rem;
+        border-top: 1px solid #444;
+    }
+
+    nav .main .toggle {
+        display: block;
+        cursor: pointer;
+    }
+
+    
+    nav .main .toggle {
+        display:block;
+    }
+
+    nav .main .toggle.active+.links {
+        display: flex;
+    }
+}
