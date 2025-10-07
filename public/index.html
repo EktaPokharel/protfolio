@@ -329,7 +329,6 @@
         <script>
             const form = document.getElementById('contact-form');
             const successMessage = document.getElementById('success-message');
-            const SERVER_URL = 'https://portfolio-puce-two-95.vercel.app'; // Replace with your backend server URL
             form.addEventListener('submit', async (e) => {
                 e.preventDefault();
 
@@ -339,7 +338,7 @@
                     message: document.getElementById('message').value
                 };
 
-                const response = await fetch(`$(SERVER_URL)/api/contact`, {
+                const response = await fetch(`api/contact`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(formData)
@@ -363,5 +362,6 @@
         </div>
     </footer>
 </body>
+
 
 </html>
