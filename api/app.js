@@ -14,7 +14,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // ====== PostgreSQL Connection ======
 const pool = new Pool({
-  connectionString: process.env.DATABASE_URL, // e.g. from Vercel env
+  connectionString: process.env.DATABASE_POSTGRES_URL, // e.g. from Vercel env
   ssl: process.env.NODE_ENV === 'production' ? { rejectUnauthorized: false } : false,
 });
 
@@ -113,3 +113,4 @@ if (process.env.NODE_ENV !== 'production') {
 
 // Export for Vercel (if deploying)
 module.exports = app;
+
